@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Signika Negative', sans-serif;
+    background-color:rgb(237, 237, 228);
+}
+
+:root{
+    --amarelo:  rgb(142, 142, 7);
+    --verde-claro: #2a8908; 
+    --vermelho: rgb(157, 6, 6);
+
+}
+
+span{
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+.vermelho{
+    color: var(--vermelho);
+}
+
+.Verde{
+    color: var(--verde-claro);
+}
+
+.amarelo{
+    color: var(--amarelo);
+}
+
+.titulo{
+    margin-top: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+}
