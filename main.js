@@ -31,9 +31,38 @@ for(let i=0; i<row; i++ ){
     tentativas.appendChild(tetativaLinha)
 }
 
-conteudo1.forEach(function(key){
+
+function preencheTeclado (array, pai){
+array.forEach(function(key){
     const btn = document.createElement('button');
+    btn.textContent = key;
     btn.setAttribute('id', key);
-    btn.innerHTML = key;
-    tecl1.appendChild(btn)
+    btn.setAttribute('class', 'tecla');
+    btn.addEventListener('click', function(){
+        console.log('tecla: ', key)
+    })
+    pai.appendChild(btn)
 })
+}
+
+preencheTeclado (conteudo1, tecl1);
+preencheTeclado (conteudo2, tecl2);
+preencheTeclado (conteudo3, tecl3);
+
+const deleta = document.createElement('button')
+deleta.textContent = '<--'
+deleta.setAttribute('id', 'deleta');
+deleta.setAttribute('class', 'tecla');
+deleta.addEventListener('click', () => {
+    console.log('deleta')
+})
+teclApaga.appendChild(deleta)
+
+const enter = document.createElement('button')
+enter.textContent = 'ENTER'
+enter.setAttribute('id', 'enter');
+enter.setAttribute('class', 'tecla');
+enter.addEventListener('click', () => {
+    console.log('enter')
+})
+teclApaga.appendChild(enter)

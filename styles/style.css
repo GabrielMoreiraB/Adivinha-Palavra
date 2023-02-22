@@ -72,3 +72,29 @@ span{
     justify-content: center;
     cursor: pointer;
 }
+
+.teclado-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .5em;
+}
+
+
+#teclado-linha1, #teclado-linha2, #teclado-linha3, #teclado-apaga{
+    display: flex;
+    gap: .5em;
+}
+
+.tecla{
+    padding: 10px;
+    border-radius: .25em;
+    cursor: pointer;
+    border: 1px solid rgb(46, 46, 46);
+
+}
+
+#teclado-apaga > button{
+    width: 100px;
+}
