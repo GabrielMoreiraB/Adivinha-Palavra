@@ -1,7 +1,6 @@
 
 
 
-
 const tentativas = document.querySelector('.tentativa-container');
 
 const teclado = document.querySelector('.teclado-container');
@@ -84,12 +83,15 @@ function checkPalpite (){
         
         if(mapaPalavra[letraTest] === undefined){
 
-            colunasDePalpites[i].classList.add('errado')
+            colunasDePalpites[i].classList.add('errado');
+            document.querySelector('#'+palpite[i]).classList.add('errado');
         } else {
             if(mapaPalavra[letraTest] === i){
                 colunasDePalpites[i].classList.add('certo')
+                document.querySelector('#'+palpite[i]).classList.add('certo');
             } else{
-                colunasDePalpites[i].classList.add('talvez')
+                colunasDePalpites[i].classList.add('talvez');
+                document.querySelector('#'+palpite[i]).classList.add('talvez');
             }
         }
     }
