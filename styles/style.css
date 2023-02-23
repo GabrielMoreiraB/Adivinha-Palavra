@@ -107,10 +107,13 @@ span{
 
 .errado{
     background-color:var(--vermelho);
+    color: white;
 }
 .certo{
     background-color: var(--verde-claro);
+    color: white;
 }
 .talvez{
     background-color: var(--amarelo);
+    color: white;
 }

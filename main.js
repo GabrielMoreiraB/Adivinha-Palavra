@@ -30,7 +30,6 @@ const conteudo2 = ['A' , 'S' , 'D' , 'F' , 'G' , 'H' , 'J' , 'K' , 'L'];
 const conteudo3 = ['Z' , 'X' , 'C' , 'V' , 'B' , 'N' , 'M'];
 
 
-
 for(let i=0; i<rows; i++ ){
     const tetativaLinha = document.createElement('div');
     tetativaLinha.setAttribute('id', i);
@@ -50,7 +49,7 @@ array.forEach(function(key){
     const btn = document.createElement('button');
     btn.textContent = key;
     btn.setAttribute('id', key);
-    btn.setAttribute('class', 'tecla');
+    btn.setAttribute('class', 'tecla alfa');
     btn.addEventListener('click', function(){
         addLetraItem(key)
     })
@@ -64,6 +63,10 @@ function addLetraItem(key){
     chuteatual.textContent = key;
     colunaAtual++;
     palpite.push(key);
+    
+    const alfabeto = document.querySelectorAll('.alfa');
+    const utilitarios = document.querySelectorAll( '.utt');
+            
     //console.log(palpite)
 }
 
@@ -128,15 +131,23 @@ preencheTeclado (conteudo3, tecl3);
 const deleta = document.createElement('button')
 deleta.textContent = '<--'
 deleta.setAttribute('id', 'deleta');
-deleta.setAttribute('class', 'tecla');
-deleta.addEventListener('click', () => {
-    console.log('deleta')
-})
+deleta.setAttribute('class', 'tecla utt');
+deleta.addEventListener('click', tecladeleta)
 teclApaga.appendChild(deleta)
 
 const enter = document.createElement('button')
 enter.textContent = 'ENTER'
 enter.setAttribute('id', 'enter');
-enter.setAttribute('class', 'tecla');
+enter.setAttribute('class', 'tecla utt');
 enter.addEventListener('click', checkPalpite)
 teclApaga.appendChild(enter)
+
+
+function tecladeleta(){
+    if(palpite.length < 1) return
+    palpite.pop();
+    colunaAtual--;
+    const chuteatual = document.querySelector('#linha'+linhaAtual+'coluna'+colunaAtual);
+    chuteatual.textContent = " ";
+}
+
