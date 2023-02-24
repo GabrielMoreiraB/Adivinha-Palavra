@@ -107,8 +107,8 @@ span{
 }
 
 .errado{
-    background-color:var(--vermelho);
-    color: white;
+    background-color:rgb(180, 180, 180);
+    color:var(--vermelho)
 }
 .certo{
     background-color: var(--verde-claro);

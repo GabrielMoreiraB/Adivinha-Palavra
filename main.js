@@ -1,4 +1,11 @@
-
+const aleatorio = Math.floor(Math.random() * 330)
+console.log(aleatorio)
+async function listaP(){
+    const p = await fetch("http://localhost:3000/palavras");
+    const pconvert = await p.json()
+    //console.log(pconvert)  
+    return pconvert[aleatorio].toUpperCase();
+}
 
 
 const tentativas = document.querySelector('.tentativa-container');
@@ -153,3 +160,14 @@ function tecladeleta(){
     chuteatual.textContent = " ";
 }
 
+document.addEventListener('keydown', (event) => {
+    console.log(event.key)
+
+    if (event.key === 'Enter') {
+        checkPalpite ();
+    } else if (event.key === 'Backspace') {
+        tecladeleta();
+    } else {
+        addLetraItem(event.key.toUpperCase())
+    }
+})
