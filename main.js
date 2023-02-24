@@ -1,13 +1,26 @@
 const aleatorio = Math.floor(Math.random() * 330)
-//console.log(aleatorio)
+
+let palavra = '';
+//let mapaPalavra = [];
+let mapaPalavra = new Map;
 async function listaP(){
     const p = await fetch("http://localhost:3000/palavras");
-    const pconvert = await p.json()
-    //console.log(pconvert)  
-    return pconvert[aleatorio].toUpperCase();
+    const pconvert = await p.json()  
+    //palavra = pconvert[aleatorio].toUpperCase();
+    //console.log(palavra)
+    palavra = 'AMARA'
+    criaMapa();
 }
+listaP()
 
-
+function criaMapa(){
+    /*for (let i = 0; i < palavra.length; i++) {
+        //mapaPalavra[palavra[i]] = i
+        //mapaPalavra.set(i, palavra[i])
+    }*/
+    mapaPalavra = palavra.split('')
+    console.log(mapaPalavra)
+}
 const tentativas = document.querySelector('.tentativa-container');
 
 const teclado = document.querySelector('.teclado-container');
@@ -21,14 +34,12 @@ const rows = 6;
 let linhaAtual = 0;
 const columns = 5;
 let colunaAtual = 0;
-const palavra = listaP();
+//const palavra = listaP();
 console.log(palavra)
 let palpite = [];
-let mapaPalavra = [];
 
-for (let i = 0; i < palavra.length; i++) {
-    mapaPalavra[palavra[i]] = i;
-}
+
+
 //console.log(mapaPalavra)
 //console.log(mapaPalavra['p'])
 
@@ -89,12 +100,15 @@ function checkPalpite (){
     for(let i = 0; i < columns; i++){
         const letraTest = palpite[i];
         
-        if(mapaPalavra[letraTest] === undefined){
-
+        //if(mapaPalavra[letraTest] === undefined){
+        //if(mapaPalavra.get(letraTest) === undefined){
+        if(mapaPalavra.indexOf(letraTest) === -1){
             colunasDePalpites[i].classList.add('errado');
             document.querySelector('#'+palpite[i]).classList.add('errado');
         } else {
-            if(mapaPalavra[letraTest] === i){
+            //if(mapaPalavra[letraTest] === i){
+            //if(mapaPalavra.get(letraTest) === i){   
+            if(mapaPalavra.indexOf(letraTest) === i){    
                 colunasDePalpites[i].classList.add('certo')
                 document.querySelector('#'+palpite[i]).classList.add('certo');
             } else{
@@ -162,7 +176,7 @@ function tecladeleta(){
 }
 
 document.addEventListener('keydown', (event) => {
-    console.log(event.key)
+    //console.log(event.key)
 
     if (event.key === 'Enter') {
         checkPalpite ();

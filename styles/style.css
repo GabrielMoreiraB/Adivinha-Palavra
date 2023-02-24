@@ -111,7 +111,7 @@ span{
     color:var(--vermelho)
 }
 .certo{
-    background-color: var(--verde-claro);
+    background-color: var(--verde-claro) !important;
     color: white;
 }
 .talvez{
