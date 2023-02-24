@@ -1,0 +1,22 @@
+{
+  "name": "letreco",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GabrielMoreiraB/Letreco.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GabrielMoreiraB/Letreco/issues"
+  },
+  "homepage": "https://github.com/GabrielMoreiraB/Letreco#readme",
+  "dependencies": {
+    "json-server": "^0.17.2"
+  }
+}

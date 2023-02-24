@@ -1,5 +1,5 @@
 const aleatorio = Math.floor(Math.random() * 330)
-console.log(aleatorio)
+//console.log(aleatorio)
 async function listaP(){
     const p = await fetch("http://localhost:3000/palavras");
     const pconvert = await p.json()
@@ -21,7 +21,8 @@ const rows = 6;
 let linhaAtual = 0;
 const columns = 5;
 let colunaAtual = 0;
-const palavra = 'VASCO';
+const palavra = listaP();
+console.log(palavra)
 let palpite = [];
 let mapaPalavra = [];
 
