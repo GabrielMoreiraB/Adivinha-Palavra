@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Adivinha</title>
 </head>
 <body>
     <div class="container">
         <div class="cabecalho">
             <div class="titulo">
+                <div class="but"><button><i class='bx bx-trophy'></i></button></div>
                 <div class="Adivinha">
                     <span>A</span>
                     <span>D</span>
@@ -30,6 +33,7 @@
                     <span class="vermelho">R</span>
                     <span>A</span>
                 </div>
+                <div class="but"><button><i class='bx bx-info-circle' ></i></button></div>
             </div>
         </div>
         <div class="tentativa-container"></div>
@@ -40,6 +44,26 @@
             <div id="teclado-linha3"></div>
         </div>
     </div>
+    <dialog class="modal">
+        <div class="intra-modal">
+            <div class="but"><button><i class='bx bx-x'></i></button></div>
+                   <p>Descubra as palavras certas. Depois de cada tentativa, as letras vão mostrar o quão perto você esta.</p> 
+                   <div class="info">
+            <img src="img/certo.png" alt="">
+            <p>As letras de fundo verde estão nas posições corretas!</p>
+                   </div>
+                   <div class="info">
+            <img src="img/errado.png" alt="">
+            <p>As letras de fundo cinza não existem na palavra!</p>
+                   </div>
+                   <div class="info">
+            <img src="img/talvez.png" alt="">
+            <p>As letras de fundo amarelo existem, porem estão em posição errada!</p>
+                   </div>
+            
+                   <p>Podem existir palavras com letras repetidas. Boa sorte e bom jogo!</p>
+        </div>
+    </dialog>
     <script src="main.js"></script>
 </body>
 </html>

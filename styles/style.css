@@ -5,7 +5,7 @@
     padding: 0px;
     box-sizing: border-box;
     font-family: 'Signika Negative', sans-serif;
-    background-color:rgb(237, 237, 228);
+    background-color:#c9d6d2;
 }
 
 :root{
@@ -16,7 +16,7 @@
 }
 
 span{
-    font-size: 40px;
+    font-size: 35px;
     font-weight: bolder;
 }
 
@@ -32,16 +32,54 @@ span{
     color: var(--amarelo);
 }
 
+.bx{
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(99, 99, 99);
+    padding: 5px;
+    border: 1px solid rgb(58, 58, 58);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal{
+    box-shadow:  0 0 1rem  rgba(0, 0, 0, 0.3);
+    overflow-x: hidden;
+    padding: 1em;
+    margin: auto;
+   
+}
+
+.intra-modal{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+
+.info{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    gap: 1em;
+}
+
 .titulo{
     margin-top: 3em;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 2em;
 }
+@media (min-width: 490px ){
+   .titulo{
+    flex-direction: row;
+   } 
+}
 
 .container{
-    max-width:  500px;
+    max-width:  600px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -60,7 +98,7 @@ span{
 }
 
 .chute-coluna {
-    background-color: #dedddb;
+    background-color:#a1bab2;
     color: rgb(12, 9, 9);
     font-weight: bolder;
     height: 48px;

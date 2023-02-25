@@ -1,23 +1,18 @@
 const aleatorio = Math.floor(Math.random() * 330)
 
 let palavra = '';
-//let mapaPalavra = [];
 let mapaPalavra = new Map;
 async function listaP(){
     const p = await fetch("http://localhost:3000/palavras");
     const pconvert = await p.json()  
     //palavra = pconvert[aleatorio].toUpperCase();
     //console.log(palavra)
-    palavra = 'AMARA'
+    palavra = 'AMORA'
     criaMapa();
 }
 listaP()
 
 function criaMapa(){
-    /*for (let i = 0; i < palavra.length; i++) {
-        //mapaPalavra[palavra[i]] = i
-        //mapaPalavra.set(i, palavra[i])
-    }*/
     mapaPalavra = palavra.split('')
     console.log(mapaPalavra)
 }
@@ -34,14 +29,9 @@ const rows = 6;
 let linhaAtual = 0;
 const columns = 5;
 let colunaAtual = 0;
-//const palavra = listaP();
 console.log(palavra)
 let palpite = [];
 
-
-
-//console.log(mapaPalavra)
-//console.log(mapaPalavra['p'])
 
 const conteudo1 = ['Q' , 'W' , 'E' , 'R' , 'T' , 'Y' , 'U' , 'I' , 'O' , 'P'];
 const conteudo2 = ['A' , 'S' , 'D' , 'F' , 'G' , 'H' , 'J' , 'K' , 'L'];
@@ -82,43 +72,33 @@ function addLetraItem(key){
     colunaAtual++;
     palpite.push(key);
     
-    const alfabeto = document.querySelectorAll('.alfa');
-    const utilitarios = document.querySelectorAll( '.utt');
-            
-    //console.log(palpite)
 }
 
 
 function checkPalpite (){
     if(palpite.length !== columns) return
-
-    palpite = palpite.join("");
-
     let colunasDePalpites = document.querySelectorAll('.focus');
-    //console.log(colunasDePalpites)
+    let gabarito = mapaPalavra.join("")
+    let chutepalpite = palpite.join("")
 
-    for(let i = 0; i < columns; i++){
-        const letraTest = palpite[i];
-        
-        //if(mapaPalavra[letraTest] === undefined){
-        //if(mapaPalavra.get(letraTest) === undefined){
-        if(mapaPalavra.indexOf(letraTest) === -1){
-            colunasDePalpites[i].classList.add('errado');
-            document.querySelector('#'+palpite[i]).classList.add('errado');
-        } else {
-            //if(mapaPalavra[letraTest] === i){
-            //if(mapaPalavra.get(letraTest) === i){   
-            if(mapaPalavra.indexOf(letraTest) === i){    
-                colunasDePalpites[i].classList.add('certo')
-                document.querySelector('#'+palpite[i]).classList.add('certo');
+    for(let i = 0; i < gabarito.length; i++){
+        for(let j = 0; j < chutepalpite.length; j++){
+            if(chutepalpite[j] !== gabarito[i]){
+                colunasDePalpites[j].classList.add('errado');
+                document.querySelector('#'+palpite[j]).classList.add('errado');
+
+            }else if(j == i){
+                colunasDePalpites[j].classList.add('certo');
+                document.querySelector('#'+palpite[j]).classList.add('certo');
+
             } else{
-                colunasDePalpites[i].classList.add('talvez');
-                document.querySelector('#'+palpite[i]).classList.add('talvez');
+                    colunasDePalpites[j].classList.add('talvez');
+                    document.querySelector('#'+palpite[j]).classList.add('talvez');
             }
         }
     }
 
-    if(palpite === palavra){
+    if(gabarito == chutepalpite){
         window.alert('Acertou!')
     }
     if(linhaAtual === rows-1){
@@ -139,15 +119,12 @@ function moveProxLinha(){
     palpite = [];
 
     let linhaAlvo = document.getElementById(linhaAtual);
-    //console.log(linhaAlvo)
     let colunasAlvo = linhaAlvo.querySelectorAll('.chute-coluna');
-    //console.log(colunasAlvo)
     colunasAlvo.forEach(function(item){
         item.classList.add('focus');
     })
 
 }
-
 preencheTeclado (conteudo1, tecl1);
 preencheTeclado (conteudo2, tecl2);
 preencheTeclado (conteudo3, tecl3);
@@ -176,8 +153,6 @@ function tecladeleta(){
 }
 
 document.addEventListener('keydown', (event) => {
-    //console.log(event.key)
-
     if (event.key === 'Enter') {
         checkPalpite ();
     } else if (event.key === 'Backspace') {
@@ -185,4 +160,16 @@ document.addEventListener('keydown', (event) => {
     } else {
         addLetraItem(event.key.toUpperCase())
     }
+})
+
+const info = document.querySelector('.bx-info-circle');
+const modal = document.querySelector('.modal');
+const fechamodal = document.querySelector('.bx-x');
+
+info.addEventListener('click', () =>{
+    modal.showModal();
+});
+
+fechamodal.addEventListener('click', ()=>{
+    modal.close();
 })
