@@ -42,7 +42,7 @@ span{
     cursor: pointer;
 }
 
-.modal{
+.modal, .modal-trofel{
     box-shadow:  0 0 1rem  rgba(0, 0, 0, 0.3);
     overflow-x: hidden;
     padding: 1em;
@@ -72,10 +72,36 @@ span{
     justify-content: center;
     gap: 2em;
 }
+
+.info-jogos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+.n-jogos, .n-vitorias, .n-derrotas{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: .5em;
+}
+
 @media (min-width: 490px ){
    .titulo{
     flex-direction: row;
    } 
+}
+
+.Progresso{
+    text-align: center;
+}
+
+.bx-x-trofel{
+    position: absolute;
+    top: 5%;
+    left: 95%;
 }
 
 .container{

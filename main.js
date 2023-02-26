@@ -173,13 +173,21 @@ document.addEventListener('keydown', (event) => {
 })
 
 const info = document.querySelector('.bx-info-circle');
+const trofel = document.querySelector('.bx-trophy');
 const modal = document.querySelector('.modal');
 const fechamodal = document.querySelector('.bx-x');
+const modalTrofel = document.querySelector('.modal-trofel');
+const fechaModalTrofel = document.querySelector('.bx-x-trofel');
 
 info.addEventListener('click', () =>{
     modal.showModal();
 });
-
 fechamodal.addEventListener('click', ()=>{
     modal.close();
+})
+trofel.addEventListener('click', () =>{
+    modalTrofel.showModal();
+});
+fechaModalTrofel.addEventListener('click', ()=>{
+    modalTrofel.close();
 })
