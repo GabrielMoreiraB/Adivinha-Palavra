@@ -2,16 +2,23 @@ const aleatorio = Math.floor(Math.random() * 330)
 
 let palavra = '';
 let mapaPalavra = new Map;
+
+import { palavrasArray } from "./bd.js";
 async function listaP(){
-    const p = await fetch("http://localhost:3000/palavras");
-    const pconvert = await p.json()  
-    //palavra = pconvert[aleatorio].toUpperCase();
-    //console.log(palavra)
-    palavra = 'AMORA'
+    palavra = palavrasArray[aleatorio].toUpperCase();
     criaMapa();
 }
 listaP()
-
+//Essa função fui utilizada para a API mokada. Problema que sempre
+//era necessario inicilizr com (npx json-server --wtch bd.json)
+/*async function listaP(){
+    const p = await fetch("http://localhost:3000/palavras");
+    const pconvert = await p.json()  
+    palavra = pconvert[aleatorio].toUpperCase();
+    console.log(palavra)
+    criaMapa();
+}
+listaP()*/
 function criaMapa(){
     mapaPalavra = palavra.split('')
     console.log(mapaPalavra)
@@ -99,7 +106,10 @@ function checkPalpite (){
     }
 
     if(gabarito == chutepalpite){
-        window.alert('Acertou!')
+        window.alert('Acertou!');
+        linhaAtual = 6;
+        return
+
     }
     if(linhaAtual === rows-1){
         window.alert('Errou!')

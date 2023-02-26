@@ -5,7 +5,7 @@
     padding: 0px;
     box-sizing: border-box;
     font-family: 'Signika Negative', sans-serif;
-    background-color:#c9d6d2;
+    background-color:#eeeeed;
 }
 
 :root{
@@ -37,7 +37,7 @@ span{
     font-weight: bold;
     color: rgb(99, 99, 99);
     padding: 5px;
-    border: 1px solid rgb(58, 58, 58);
+    border: 1px solid rgb(182, 182, 180);
     border-radius: 5px;
     cursor: pointer;
 }
@@ -98,7 +98,7 @@ span{
 }
 
 .chute-coluna {
-    background-color:#a1bab2;
+    background-color:#d6d6d0;
     color: rgb(12, 9, 9);
     font-weight: bolder;
     height: 48px;
