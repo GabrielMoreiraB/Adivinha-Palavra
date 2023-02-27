@@ -204,6 +204,9 @@ fechaModalTrofel.addEventListener('click', ()=>{
 })
 
 function preparaVitoria(){
+    if(vitorias == 0){
+        return 0%;
+    }
     let v = (vitorias*100/jogos).toFixed(2);
     return (v + '%');
 }
