@@ -21,7 +21,7 @@ listaP()
 listaP()*/
 function criaMapa(){
     mapaPalavra = palavra.split('')
-    console.log(mapaPalavra)
+    //console.log(mapaPalavra)
 }
 const tentativas = document.querySelector('.tentativa-container');
 
@@ -119,7 +119,7 @@ function checkPalpite (){
 
     }
     if(linhaAtual === rows-1){
-        window.alert('Erroooooooouuuu!');
+        window.alert(`Erroooooooouuuu! A palavra é: ${palavra}`);
         jogos ++;
         derrotas ++;
         localStorage.setItem('jogos', JSON.stringify(jogos));
