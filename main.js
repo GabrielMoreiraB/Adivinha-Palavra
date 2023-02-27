@@ -36,6 +36,9 @@ const rows = 6;
 let linhaAtual = 0;
 const columns = 5;
 let colunaAtual = 0;
+let vitorias = JSON.parse(localStorage.getItem('vitorias')) || 0;
+let jogos = JSON.parse(localStorage.getItem('jogos')) || 0;
+let derrotas = JSON.parse(localStorage.getItem('derrotas')) || 0;
 console.log(palavra)
 let palpite = [];
 
@@ -106,13 +109,21 @@ function checkPalpite (){
     }
 
     if(gabarito == chutepalpite){
-        window.alert('Acertou!');
+        window.alert('Acertou! Parabéns.');
         linhaAtual = 6;
+        jogos ++;
+        vitorias++;
+        localStorage.setItem('jogos', JSON.stringify(jogos));
+        localStorage.setItem('vitorias', JSON.stringify(vitorias));
         return
 
     }
     if(linhaAtual === rows-1){
-        window.alert('Errou!')
+        window.alert('Erroooooooouuuu!');
+        jogos ++;
+        derrotas ++;
+        localStorage.setItem('jogos', JSON.stringify(jogos));
+        localStorage.setItem('derrotas', JSON.stringify(derrotas));
     }else{
         moveProxLinha();
         
@@ -191,3 +202,15 @@ trofel.addEventListener('click', () =>{
 fechaModalTrofel.addEventListener('click', ()=>{
     modalTrofel.close();
 })
+
+function preparaVitoria(){
+    let v = (vitorias*100/jogos).toFixed(2);
+    return (v + '%');
+}
+
+document.querySelector('.inner-jogos').innerHTML = jogos;
+document.querySelector('.inner-vitorias').innerHTML = preparaVitoria();
+document.querySelector('.inner-derrotas').innerHTML = derrotas;
+
+
+console.log(jogos, vitorias, derrotas)

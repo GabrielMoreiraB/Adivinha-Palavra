@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400;500;600;700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,600;0,700;0,900;1,400&display=swap');
+
 *{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    font-family: 'Signika Negative', sans-serif;
     background-color:#eeeeed;
 }
 
@@ -18,6 +19,7 @@
 span{
     font-size: 35px;
     font-weight: bolder;
+    font-family: 'Poppins', sans-serif;
 }
 
 .vermelho{
@@ -47,6 +49,7 @@ span{
     overflow-x: hidden;
     padding: 1em;
     margin: auto;
+    min-width: 300px;
    
 }
 
@@ -96,12 +99,28 @@ span{
 
 .Progresso{
     text-align: center;
+    padding-bottom: 2em;
 }
 
 .bx-x-trofel{
     position: absolute;
     top: 5%;
-    left: 95%;
+    left: 85%;
+}
+
+.inner-derrotas, .inner-vitorias, .inner-jogos{
+    font-size: 3em;
+    margin:  0 3vw;
+}
+
+.inner-derrotas{
+    color: var(--vermelho);
+}
+.inner-vitorias{
+    color: var(--verde-claro);
+}
+.inner-jogos{
+    color: var(--amarelo);
 }
 
 .container{
@@ -137,6 +156,7 @@ span{
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    font-family: 'Poppins', sans-serif;
 }
 
 .teclado-container{
@@ -159,6 +179,7 @@ span{
     border-radius: .25em;
     cursor: pointer;
     border: 1px solid rgb(46, 46, 46);
+    font-family: 'Poppins', sans-serif;
 
 }
 
