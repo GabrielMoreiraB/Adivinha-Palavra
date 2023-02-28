@@ -18,7 +18,7 @@ O jogo conta com uma aba de progresso pessoal, com informações de jogos, vitó
 O jogador pode escolher utilizar o teclado virtual ou seu prórpio teclado. 
 
 * **Versão** - 
-![alt text](https://github.com/GabrielMoreiraB/Luffy-store/blob/main/img/img%201.png)
+![alt text](https://github.com/GabrielMoreiraB/Adivinha-Palavra/blob/main/img/adivinha.png)
 
 
 
