@@ -215,3 +215,8 @@ document.querySelector('.inner-jogos').innerHTML = jogos;
 document.querySelector('.inner-vitorias').innerHTML = preparaVitoria();
 document.querySelector('.inner-derrotas').innerHTML = derrotas;
 
+
+const att = document.querySelector('.att');
+att.addEventListener('click',() => {
+    window.location.reload();
+})

@@ -90,11 +90,19 @@ span{
     flex-direction: column;
     gap: .5em;
 }
+.buttons{
+    display: flex;
+    flex-direction: row;
+    gap: .5em;
+}
 
 @media (min-width: 490px ){
    .titulo{
     flex-direction: row;
    } 
+   .buttons{
+    flex-direction: column;
+   }
 }
 
 .Progresso{
